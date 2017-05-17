@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author autowired
- *         Date    5/17/17
+ * Date    5/17/17
  */
 @RestController
 @RequestMapping(value = "/helloworld", produces = MediaType.APPLICATION_JSON_VALUE)
