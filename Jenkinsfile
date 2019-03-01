@@ -1,15 +1,14 @@
 pipeline {
     agent {
-        docker { image 'maven:3.3.3' }
-    }
-    environment {
-        FOOBAR = credentials('foo.bar')
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
     }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                echo "$FOOBAR"
-                sh 'mvn --version'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
