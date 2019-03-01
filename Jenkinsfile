@@ -1,7 +1,6 @@
-#!/usr/bin/env groovy
 pipeline {
     agent { docker { image 'maven:3.3.3' }
-    environment{
+    environment {
         FOOBAR = credentials('foo.bar')
     }
     stages {
